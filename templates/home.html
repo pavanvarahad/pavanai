@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    {% load static %}    
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>HOME</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel="stylesheet" href="{% static '/style.css'%}">
+</head>
+<body>
+    <h1>Django Add Project</h1>
+    {% if result %}
+    <h2 style="color: red;">Sum Is : {{result}}</h2>
+    {% endif %}
+    <form action="/add/" method="post">
+        {% csrf_token %}
+        <input placeholder="Enter A Value" name="aval" id="aval" required/>
+        <input placeholder="Enter B Value" name="bval" id="bval" required/>
+        <input type="submit"/>
+    </form>
+</body>
+</html>
